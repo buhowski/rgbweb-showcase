@@ -29,7 +29,8 @@
 }
 .iti {
 	position: relative;
-	display: inline-block;
+	display: block;
+	width: 100%;
 }
 .iti * {
 	box-sizing: border-box;
@@ -256,7 +257,7 @@
 	height: var(--iti-flag-height);
 	width: var(--iti-flag-width);
 	box-shadow: 0 0 1px 0 #888;
-	background-image: var(--iti-path-flags-1x);
+	background-image: var(--iti-path-flags-2x);
 	background-repeat: no-repeat;
 	background-position: var(--iti-flag-offset) 0;
 	background-size: var(--iti-flag-sprite-width) var(--iti-flag-sprite-height);

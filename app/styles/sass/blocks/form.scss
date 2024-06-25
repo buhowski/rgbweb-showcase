@@ -89,6 +89,8 @@
 		font-weight: 600;
 		margin-bottom: 26px;
 
+		white-space: nowrap;
+
 		@include tablet {
 			font-size: 15px;
 			margin-top: -1px;
@@ -171,8 +173,20 @@
 	&__text {
 		font-size: 12px;
 
+		&-mobile {
+			display: none;
+		}
+
 		@include tablet {
 			max-width: 162px;
+
+			&-mobile {
+				display: block;
+			}
+
+			&-desktop {
+				display: none;
+			}
 		}
 
 		&-name {
@@ -242,6 +256,7 @@ form {
 	@include tablet {
 		box-shadow: 0 8.96px 44.81px rgba(#287fa5, 0.1);
 		padding: 40px 21px;
+		border-radius: 9.96px;
 	}
 
 	h2 {
@@ -267,14 +282,17 @@ form {
 	label {
 		margin-bottom: 14px;
 		display: block;
-		background-color: #272d3d;
-		border-radius: 5px;
+		width: 100%;
 		font-size: 13px;
-		height: 51px;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
 		font-weight: 700;
+
+		@include tablet {
+			color: $white;
+			font-size: 12px;
+		}
 
 		&:hover {
 			input {
@@ -285,18 +303,21 @@ form {
 		}
 
 		input {
+			height: 51px;
 			padding: 13px 23px;
 			width: 100%;
+			background-color: #272d3d;
+			border-radius: 5px;
+
+			@include tablet {
+				height: 46px;
+				border-radius: 4.48px;
+			}
 
 			&::placeholder {
+				font-weight: normal;
 				color: #d7d7d7;
 			}
-		}
-
-		@include tablet {
-			color: $white;
-			font-size: 12px;
-			height: 46px;
 		}
 	}
 
@@ -315,6 +336,7 @@ form {
 			margin-inline: auto;
 			padding: 14px 35px;
 			font-size: 14px;
+			border-radius: 4.48px;
 		}
 
 		&:hover {
