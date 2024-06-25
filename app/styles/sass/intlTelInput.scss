@@ -19,10 +19,10 @@
 		var(--iti-arrow-padding) + var(--iti-arrow-padding) + var(--iti-flag-width) +
 			var(--iti-spacer-horizontal) + var(--iti-arrow-width) + var(--iti-input-padding)
 	);
-	--iti-path-flags-1x: url('../images/src/flags/flags.png?1');
-	--iti-path-flags-2x: url('../images/src/flags/flags@2x.png?1');
-	--iti-path-globe-1x: url('../images/src/flags/globe.png');
-	--iti-path-globe-2x: url('../images/src/flags/globe@2x.png');
+	--iti-path-flags-1x: url('../images/dist/flags/flags.png?1');
+	--iti-path-flags-2x: url('../images/dist/flags/flags@2x.png?1');
+	--iti-path-globe-1x: url('../images/dist/flags/globe.png');
+	--iti-path-globe-2x: url('../images/dist/flags/globe@2x.png');
 	--iti-flag-sprite-width: 5762px;
 	--iti-flag-sprite-height: 15px;
 	--iti-mobile-popup-margin: 30px;
