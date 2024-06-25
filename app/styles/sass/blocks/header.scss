@@ -2,15 +2,24 @@
 	padding: 34px 0;
 	margin-bottom: 79px;
 
+	@include tablet {
+		padding: 28px 0;
+		margin-bottom: 1px;
+	}
+
 	&-navigation {
 		display: flex;
 		font-size: 14px;
 		font-weight: 600;
 		align-items: center;
 
+		@include tablet {
+			font-size: 11px;
+		}
+
 		button {
 			background-color: #302e5a;
-			padding: 12px 15px;
+			padding: 13px 15px 12px;
 			border-radius: 10px;
 			display: inline-flex;
 			align-items: center;
@@ -19,26 +28,48 @@
 			flex-shrink: 0;
 			flex-grow: 1;
 
+			@include tablet {
+				padding: 6px 7px 5px;
+				min-width: 84px;
+				border-radius: 5.93px;
+			}
+
 			&:hover {
 				opacity: 0.7;
 			}
 
 			&:not(:last-child) {
 				margin-right: 15px;
+
+				@include tablet {
+					margin-right: 6px;
+				}
 			}
 
 			img {
 				margin-right: 7px;
+
+				@include tablet {
+					width: 10.5px;
+					margin-right: 5px;
+				}
 			}
 		}
 	}
 }
 
 .actions {
-	display: inline-block;
+	display: inline-flex;
 	margin-bottom: 4px;
 }
 
 .logo {
 	margin-right: auto;
+	width: 162px;
+	flex-shrink: 0;
+
+	@include tablet {
+		width: 101px;
+		margin-left: 14px;
+	}
 }

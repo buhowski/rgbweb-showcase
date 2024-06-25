@@ -17,6 +17,20 @@ body {
 	overflow: hidden;
 	z-index: 1;
 
+	&__desktop {
+		@include tablet {
+			display: none;
+		}
+	}
+
+	&__mobile {
+		display: none;
+
+		@include tablet {
+			display: block;
+		}
+	}
+
 	&__ball,
 	&__logo {
 		position: absolute;
@@ -30,6 +44,12 @@ body {
 		&--right {
 			right: 0;
 			top: 0;
+		}
+
+		&--mobile {
+			bottom: 0;
+			right: 0;
+			width: 100%;
 		}
 	}
 

@@ -2,6 +2,10 @@
 
 .home-section {
 	margin: auto;
+
+	@include tablet {
+		padding-bottom: 59px;
+	}
 }
 
 .form-container {
@@ -22,6 +26,9 @@
 
 			@include tablet {
 				display: block;
+				margin-top: 36px;
+				display: flex;
+				flex-direction: column-reverse;
 			}
 		}
 
@@ -36,6 +43,10 @@
 }
 
 .title {
+	@include tablet {
+		text-align: center;
+	}
+
 	&__img {
 		font-weight: 600;
 		padding: 6px 14px 7px;
@@ -44,8 +55,20 @@
 		display: inline-flex;
 		align-items: center;
 
+		@include tablet {
+			font-size: 12px;
+			padding: 5px 10px;
+			border-radius: 3px;
+			margin-right: 14px;
+		}
+
 		img {
 			margin-right: 6px;
+
+			@include tablet {
+				width: 14px;
+				margin-right: 5px;
+			}
 		}
 	}
 
@@ -54,12 +77,23 @@
 		font-weight: 800;
 		color: $highlight-color;
 		text-transform: uppercase;
+		white-space: nowrap;
+
+		@include tablet {
+			font-size: 52.73px;
+		}
 	}
 
 	&__desc {
 		font-size: 21.95px;
 		font-weight: 600;
 		margin-bottom: 26px;
+
+		@include tablet {
+			font-size: 15px;
+			margin-top: -1px;
+			margin-bottom: 17px;
+		}
 
 		span {
 			position: relative;
@@ -69,6 +103,12 @@
 			font-weight: 800;
 			text-transform: uppercase;
 			margin-right: 12px;
+
+			@include tablet {
+				font-size: 16px;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
 
 			&::before {
 				content: '';
@@ -82,6 +122,11 @@
 				left: 0;
 				z-index: -1;
 				transform: rotate(-3.51deg);
+
+				@include tablet {
+					border-radius: 3.57px;
+					transform: rotate(-3.49deg);
+				}
 			}
 		}
 	}
@@ -89,6 +134,11 @@
 	&__text {
 		font-size: 18px;
 		line-height: 148%;
+
+		@include tablet {
+			font-size: 14px;
+			margin-bottom: 21px;
+		}
 
 		span {
 			font-weight: 600;
@@ -101,16 +151,29 @@
 
 	&:not(:last-child) {
 		margin-bottom: 16px;
+
+		@include tablet {
+			margin-bottom: 0;
+			margin-top: 18px;
+		}
 	}
 
 	&__img {
 		flex-shrink: 0;
 		width: 51px;
 		margin-right: 17px;
+
+		@include tablet {
+			margin-right: 11px;
+		}
 	}
 
 	&__text {
 		font-size: 12px;
+
+		@include tablet {
+			max-width: 162px;
+		}
 
 		&-name {
 			font-size: 13px;
@@ -125,6 +188,11 @@
 	h2 {
 		font-weight: 700;
 		margin-bottom: 1px;
+
+		@include tablet {
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
 	}
 
 	p {
@@ -144,6 +212,12 @@
 	&--gift {
 		.person__img {
 			margin-top: 5px;
+
+			img {
+				@include tablet {
+					width: 45px;
+				}
+			}
 		}
 
 		h2 {
@@ -165,12 +239,25 @@ form {
 	border-radius: 10px;
 	padding: 50px 58px;
 
+	@include tablet {
+		box-shadow: 0 9px 45px 0 rgba(40, 127, 165, 0.1);
+		padding: 40px 21px;
+	}
+
 	h2 {
 		text-align: center;
 		font-size: 22px;
 		line-height: 26px;
 		font-weight: 700;
 		margin-bottom: 20px;
+
+		@include tablet {
+			line-height: 23.3px;
+			font-size: 20px;
+			max-width: 238px;
+			margin-inline: auto;
+			margin-bottom: 18px;
+		}
 
 		span {
 			color: $highlight-color;
@@ -190,8 +277,10 @@ form {
 		display: flex;
 		align-items: center;
 
-		input {
-			margin-bottom: 3px;
+		@include tablet {
+			font-size: 12px;
+			padding-left: 26px;
+			height: 46px;
 		}
 	}
 
@@ -204,9 +293,23 @@ form {
 		border-radius: 5px;
 		font-weight: 700;
 
+		@include tablet {
+			background-color: #0048ff;
+			width: auto;
+			margin-inline: auto;
+			padding: 14px 35px;
+			font-size: 14px;
+		}
+
 		&:hover {
 			opacity: 0.7;
 		}
+	}
+}
+
+.form-action {
+	@include tablet {
+		text-align: center;
 	}
 }
 
@@ -217,6 +320,10 @@ form {
 	font-weight: 500;
 	line-height: 149%;
 	margin-top: 21px;
+
+	@include tablet {
+		font-size: 11px;
+	}
 
 	a {
 		text-decoration: underline;
