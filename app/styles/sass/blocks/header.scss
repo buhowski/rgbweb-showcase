@@ -1,0 +1,41 @@
+.header {
+	padding: 42px 0;
+
+	&-navigation {
+		display: flex;
+		font-size: 14px;
+		font-weight: 600;
+
+		button {
+			background-color: #302e5a;
+			padding: 12px 15px;
+			border-radius: 10px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 141px;
+			flex-shrink: 0;
+			flex-grow: 1;
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+			&:not(:last-child) {
+				margin-right: 18px;
+			}
+
+			img {
+				margin-right: 7px;
+			}
+		}
+	}
+}
+
+.actions {
+	display: inline-block;
+}
+
+.logo {
+	margin-right: auto;
+}

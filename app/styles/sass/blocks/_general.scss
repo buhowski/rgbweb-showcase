@@ -1,0 +1,15 @@
+@import '../config';
+
+// GENERAL PROJECT STYLES
+body {
+	font-family: $font-family;
+	min-width: 320px;
+	background-color: $bg-color;
+	color: $white;
+}
+
+.wrapper {
+	width: min(100%, 960px); // instead of max-width
+	margin-inline: auto; // instead of margin: 0 auto;
+	padding: 0 16px;
+}

@@ -1,0 +1,29 @@
+@import '../config';
+
+.form-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.title {
+		width: min(100%, 427px);
+
+		&--mobile {
+			display: none;
+
+			@include tablet {
+				display: block;
+			}
+		}
+
+		&--desktop {
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+}
+
+.form {
+	width: min(100%, 366px);
+}

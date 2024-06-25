@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<!--#set var="title" value="Title" -->
+	<!--#include virtual="/parts/head.html" -->
+
+	<body>
+		<main class="page">
+			<!-- Header section -->
+			<header class="header">
+				<div class="wrapper">
+					<nav class="header-navigation">
+						<a href="/" class="logo">
+							<img src="images/src/logo.svg" alt="description" />
+						</a>
+
+						<div class="actions">
+							<button type="button">
+								<img src="images/src/date-icon.svg" alt="description" />
+								28 декабря
+							</button>
+
+							<button type="button">
+								<img src="images/src/time-icon.svg" alt="description" />
+								3,5 часа
+							</button>
+						</div>
+					</nav>
+				</div>
+			</header>
+
+			<!-- Form + main title container -->
+			<section class="">
+				<div class="wrapper">
+					<div class="form-container">
+						<div class="title">
+							<p>
+								<img src="images/src/web.svg" alt="description" /> <span>Вебинар</span>
+							</p>
+
+							<h1>front-end</h1>
+
+							<p>
+								<span>с нуля</span>
+								легкий старт в IT профессии
+							</p>
+
+							<p>
+								Узнайте какими
+								<span>навыками должен обладать фронтенд разработчик в 2022 году</span>
+								и как начать карьеру в востребованной профессии
+							</p>
+
+							<div class="title--desktop">
+								<!--#include virtual="/parts/person.html" -->
+							</div>
+						</div>
+
+						<div class="form">
+							<form action="submit.php" method="post">
+								<h2>Запишитесь <span>бесплатно</span> и получите подарок</h2>
+
+								<label for="name">
+									Ваше имя и фамилия
+									<input type="text" id="name" name="name" required />
+								</label>
+
+								<label for="phone">
+									Ваш номер телефона
+									<input type="tel" id="phone" name="phone" required />
+								</label>
+
+								<label for="email">
+									Ваш email
+									<input type="email" id="email" name="email" required />
+								</label>
+
+								<button type="submit">Записаться бесплатно</button>
+
+								<p>
+									Нажимая на кнопку я согашаюсь
+									<a href="#">с политикой конфидециальности</a>
+								</p>
+							</form>
+						</div>
+
+						<div class="title--mobile">
+							<!--#include virtual="/parts/person.html" -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="js/app.min.js"></script>
+	</body>
+</html>
