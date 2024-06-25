@@ -162,8 +162,26 @@ function startwatch() {
 	);
 }
 
-export { scripts, styles, images, deploy };
-export let assets = series(scripts, styles, images);
-export let build = series(cleandist, images, scripts, styles, buildcopy, buildhtml);
+function copyUtils() {
+	return src('app/utils/**/*.js').pipe(dest('dist/js')).pipe(browserSync.stream());
+}
 
-export default series(scripts, styles, images, parallel(browsersync, startwatch));
+export { scripts, styles, images, deploy, copyUtils };
+export let assets = series(scripts, styles, images);
+export let build = series(
+	cleandist,
+	images,
+	scripts,
+	styles,
+	buildcopy,
+	buildhtml,
+	copyUtils
+);
+
+export default series(
+	scripts,
+	styles,
+	images,
+	copyUtils,
+	parallel(browsersync, startwatch)
+);
