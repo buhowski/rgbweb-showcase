@@ -11,43 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		utilsScript: '../utils/utils.js',
 	});
 
-	// Telegram bot details
-	let tg = {
-		token: '6490333690:AAEx9iHe6BQsHRsor28JfGfFLYmdlSLD09I', // Replace with your bot's token from @BotFather
-		chat_id: 'OlexanderTsiomakh', // Replace with the user's Telegram chat id
-	};
-
-	/**
-	 * Sends a message to a specific Telegram user.
-	 * @param {String} text - The text message to send.
-	 */
-	function sendMessage(text) {
-		const url = `https://api.telegram.org/bot${tg.token}/sendMessage`;
-		const params = {
-			chat_id: tg.chat_id,
-			text: text,
-		};
-
-		fetch(url, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(params),
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.ok) {
-					confirm(text);
-				} else {
-					confirm(`Error sending message to ${tg.chat_id}:`, data.description);
-				}
-			})
-			.catch((error) => {
-				console.error('Error sending message:', error);
-			});
-	}
-
 	// Handle form submission
 	const form = document.getElementById('form');
 
@@ -59,9 +22,33 @@ document.addEventListener('DOMContentLoaded', () => {
 		const phone = inputPhone.value;
 		const email = document.getElementById('email').value;
 
-		// Send message with form data
-		sendMessage(
-			`New form submission: \nName: ${name} \nPhone: ${phone} \nEmail: ${email}`
-		);
+		//  Construct the message content with user details
+		const formattedMessage = `Form Data: \nName: ${name} \nPhone: ${phone} \nEmail: ${email}`;
+
+		confirm(formattedMessage);
+
+		const token = '6772419107:AAGo6vvV1-HFbFaYR2hsFuvOsyo6F3CizEY'; // Replace with your Telegram bot token
+		const chatId = '@RGBwebShowcaseFormData'; // Replace with your Telegram chat ID
+		const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${formattedMessage}&parse_mode=html`;
+
+		fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formattedMessage),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(JSON.stringify(data));
+
+				if (data.ok) {
+					console.log(`Message sent To ${chatId} successfully:`, data);
+				} else {
+					console.error('Error sending message:', data.description);
+				}
+				confirm(`Message Sent to ${chatId}`, `Form Data:`, data);
+			})
+			.catch((error) => console.error('Error sending message:', error));
 	});
 });

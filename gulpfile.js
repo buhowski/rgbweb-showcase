@@ -163,7 +163,7 @@ function startwatch() {
 }
 
 function copyUtils() {
-	return src('app/utils/**/*.js').pipe(dest('dist/js')).pipe(browserSync.stream());
+	return src('app/utils/**/*').pipe(dest('dist/utils')).pipe(browserSync.stream());
 }
 
 export { scripts, styles, images, deploy, copyUtils };
