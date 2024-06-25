@@ -39,7 +39,7 @@
 			}
 
 			&:not(:last-child) {
-				margin-right: 15px;
+				margin-right: 18px;
 
 				@include tablet {
 					margin-right: 6px;
@@ -65,7 +65,7 @@
 
 .logo {
 	margin-right: auto;
-	width: 162px;
+	width: 182px;
 	flex-shrink: 0;
 
 	@include tablet {
