@@ -135,6 +135,11 @@ select {
 	border: none;
 	outline: none;
 	box-sizing: border-box;
+	display: inline-block;
+
+	&::placeholder {
+		color: inherit;
+	}
 
 	&:focus:required:invalid {
 		border-color: red;
