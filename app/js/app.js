@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		initialCountry: 'ua',
 		strictMode: true,
 		separateDialCode: true,
-		utilsScript: './utils.js',
+		utilsScript: './app.min.js',
 	});
 
 	const form = document.getElementById('form');
