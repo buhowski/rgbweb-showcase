@@ -240,7 +240,7 @@ form {
 	padding: 50px 58px;
 
 	@include tablet {
-		box-shadow: 0 9px 45px 0 rgba(40, 127, 165, 0.1);
+		box-shadow: 0 8.96px 44.81px rgba(#287fa5, 0.1);
 		padding: 40px 21px;
 	}
 
@@ -278,6 +278,7 @@ form {
 		align-items: center;
 
 		@include tablet {
+			color: $white;
 			font-size: 12px;
 			padding-left: 26px;
 			height: 46px;
