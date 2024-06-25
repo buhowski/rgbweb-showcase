@@ -267,8 +267,6 @@ form {
 	label {
 		margin-bottom: 14px;
 		display: block;
-		padding: 13px 23px;
-		color: #d7d7d7;
 		background-color: #272d3d;
 		border-radius: 5px;
 		font-size: 13px;
@@ -276,11 +274,28 @@ form {
 		cursor: pointer;
 		display: flex;
 		align-items: center;
+		font-weight: 700;
+
+		&:hover {
+			input {
+				&::placeholder {
+					color: rgba(#d7d7d7, 0.5);
+				}
+			}
+		}
+
+		input {
+			padding: 13px 23px;
+			width: 100%;
+
+			&::placeholder {
+				color: #d7d7d7;
+			}
+		}
 
 		@include tablet {
 			color: $white;
 			font-size: 12px;
-			padding-left: 26px;
 			height: 46px;
 		}
 	}

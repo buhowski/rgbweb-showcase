@@ -50,5 +50,8 @@
 		"terser-webpack-plugin": "^5.3.10",
 		"webpack": "^5.92.1",
 		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"intl-tel-input": "^23.1.0"
 	}
 }
