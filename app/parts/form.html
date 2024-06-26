@@ -12,7 +12,14 @@
 	</label>
 
 	<label class="label-phone" for="phone">
-		<input type="tel" id="phone" name="phone" placeholder="66 777 6969" required />
+		<input
+			type="tel"
+			id="phone"
+			name="phone"
+			placeholder="66 777 6969"
+			required
+			pattern="\d{6,15}"
+		/>
 	</label>
 
 	<label for="email">

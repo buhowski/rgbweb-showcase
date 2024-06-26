@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Telegram API details (replace with yours)
 		const token = '6772419107:AAGo6vvV1-HFbFaYR2hsFuvOsyo6F3CizEY';
-		const chatId = '@RgbWebFormData';
+		const chatId = '@TestFormDataShowcase';
 
 		// Build the URL with query parameters
 		const url = `https://api.telegram.org/bot${token}/sendMessage`;
@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 						`Successfully sent to Telegram ${chatId} \nHTML Preview: \n${formattedMessage}`
 					);
 				} else {
-					console.log(`Error: ${data.error_code} \n${data.description}`);
+					console.log(`${chatId} Error: ${data.error_code} \n${data.description}`);
 
-					alert(`Error: ${data.error_code} \n${data.description}`);
+					alert(`${chatId} Error: ${data.error_code} \n${data.description}`);
 				}
 			})
 			.catch((error) => console.error('Error sending message:', error));
