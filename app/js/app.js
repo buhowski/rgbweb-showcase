@@ -1,7 +1,8 @@
 import intlTelInput from 'intl-tel-input';
 
 document.addEventListener('DOMContentLoaded', () => {
-	// Initialize phone number input
+	// Handle form submission
+	const form = document.getElementById('form');
 	const inputPhone = document.querySelector('#phone');
 
 	intlTelInput(inputPhone, {
@@ -11,43 +12,50 @@ document.addEventListener('DOMContentLoaded', () => {
 		utilsScript: '../utils/utils.js',
 	});
 
-	// Handle form submission
-	const form = document.getElementById('form');
-
 	form.addEventListener('submit', (event) => {
-		event.preventDefault(); // Prevent default form submission
+		// Prevent default form submission
+		event.preventDefault();
 
 		// Gather form data
 		const name = document.getElementById('name').value;
 		const phone = inputPhone.value;
 		const email = document.getElementById('email').value;
+		const siteUrl = window.location.href;
 
 		//  Construct the message content with user details
-		const formattedMessage = `Form Data: \nName: ${name} \nPhone: ${phone} \nEmail: ${email}`;
+		const formattedMessage = `<b>Message from site [${siteUrl}]:</b>\n<b>Full Name:</b> <i>${name}</i>\n<b>Phone:</b> <i>${phone}</i>\n<b>Email:</b> <i>${email}</i>`;
 
-		confirm(formattedMessage);
+		// Telegram API details (replace with yours)
+		const token = '6772419107:AAGo6vvV1-HFbFaYR2hsFuvOsyo6F3CizEY';
+		const chatId = '@RGBwebShowcaseFormData';
 
-		const token = '6772419107:AAGo6vvV1-HFbFaYR2hsFuvOsyo6F3CizEY'; // Replace with your Telegram bot token
-		const chatId = '@RGBwebShowcaseFormData'; // Replace with your Telegram chat ID
-		const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${formattedMessage}&parse_mode=html`;
+		// Build the URL with query parameters
+		const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+		const data = {
+			chat_id: chatId,
+			text: formattedMessage,
+			parse_mode: 'HTML',
+		};
 
 		fetch(url, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(formattedMessage),
+			body: JSON.stringify(data),
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(JSON.stringify(data));
+				console.log(data);
 
 				if (data.ok) {
-					console.log(`Message sent To ${chatId} successfully:`, data);
+					confirm(
+						`Message sent To ${chatId} successfully! \nHTML Data Preview: \n${formattedMessage}`
+					);
 				} else {
-					console.error('Error sending message:', data.description);
+					console.log(`Error: ${data.error_code} \n${data.description}`);
 				}
-				confirm(`Message Sent to ${chatId}`, `Form Data:`, data);
 			})
 			.catch((error) => console.error('Error sending message:', error));
 	});
