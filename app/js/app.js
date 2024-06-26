@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		const siteUrl = window.location.href;
 
 		//  Construct the message content with user details
-		const formattedMessage = `<b>Message from site [${siteUrl}]:</b>\n<b>Full Name:</b> <i>${name}</i>\n<b>Phone:</b> <i>${phone}</i>\n<b>Email:</b> <i>${email}</i>`;
+		const formattedMessage = `<b>Message from site ${siteUrl}:</b>\n<b>Name:</b> <i>${name}</i>\n<b>Phone:</b> <i>${phone}</i>\n<b>Email:</b> <i>${email}</i>`;
 
 		// Telegram API details (replace with yours)
 		const token = '6772419107:AAGo6vvV1-HFbFaYR2hsFuvOsyo6F3CizEY';
-		const chatId = '@RGBwebShowcaseFormData';
+		const chatId = '@RgbWebFormData';
 
 		// Build the URL with query parameters
 		const url = `https://api.telegram.org/bot${token}/sendMessage`;
@@ -50,11 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				console.log(data);
 
 				if (data.ok) {
+					console.log(`Successfully sent to Telegram: ${chatId}`);
+
 					confirm(
-						`Message sent To ${chatId} successfully! \nHTML Data Preview: \n${formattedMessage}`
+						`Successfully sent to Telegram ${chatId} \nHTML Preview: \n${formattedMessage}`
 					);
 				} else {
 					console.log(`Error: ${data.error_code} \n${data.description}`);
+
+					alert(`Error: ${data.error_code} \n${data.description}`);
 				}
 			})
 			.catch((error) => console.error('Error sending message:', error));
